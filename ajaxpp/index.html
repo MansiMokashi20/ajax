@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+
+<style>
+    body,
+    .container{
+        margin:10px;
+        padding: 10px 20px;
+        display: inline-block;
+        border: 2px solid black;
+        background-color: blanchedalmond;
+        border-radius: 5px;
+    }
+</style>
+
+<body>
+    <h1>Registration Form</h1>
+    <div class="container">
+        <form action="">
+
+            <label>Name :</label>
+            <input type="text" id="name" placeholder="Enter your name"><br><br>
+
+            <label>Email :</label>
+            <input type="email" id="email" placeholder="abc@gmail.com"><br><br>
+
+            <label>DOB :</label>
+            <input type="date" id="date"><br><br>
+
+            <label>Mobile No. :</label>
+            <input type="number" id="mobno"><br>><br>
+
+            <label>Address : </label>
+            <textarea id="addr" cols="20" rows="3"></textarea><br><br>
+
+            <label>Gender</label>
+            <input type="radio" id="gender">
+            <label>Male</label>
+            <input type="radio" id="'gender">
+            <label>Female</label>
+
+            <input type="checkbox" id="c">
+            <label>Coding</label>
+            <input type="checkbox" id="c">
+            <label>Drawing</label>
+            <input type="checkbox" id="c">
+            <label>Drawing</label>
+            <input type="checkbox" id="c">
+            <label>Drawing</label>
+            <input type="checkbox" id="c">
+            <label>Drawing</label>
+
+
+            <button onclick="AddData()">
+                <a href="data.html">Submit</a>
+            </button>
+            <input type="reset">    
+            
+
+        </form>
+    </div>
+
+<script>
+    let checkedData;
+    function AddData(){
+        const studentName = document.getElementById("name").value;
+        const studentEmail = document.getElementById("email").value;
+        const studentMob = document.getElementById("mobno").value;
+        const studentAddr = document.getElementById("addr").value;
+        
+
+        const checkedEle = document.querySelectorAll(".c");
+
+        for(let i=0; i<checkedEle.length; i++){
+            if(checkedEle[i].checked == true){
+                checkedData+=checkedEle[i].value;
+            }
+        }
+
+        localStorage.setItem("Name",studentName);
+        localStorage.setItem("Email",studentEmail);
+        localStorage.setItem("MobileNo",studentMob);
+        localStorage.setItem("Address",studentAddr);
+    }
+    console.log(checkedData);
+
+    console.log(name)
+</script>    
+    
+</body>
+</html>

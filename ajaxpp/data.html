@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <h2>Local Storage</h2>
+        </div>
+
+        <div class="data">
+            <p id="name"></p>
+            <p id="email"></p>
+            <p id="mobno"></p>
+            <p id="addr"></p>
+        </div>
+    </div>
+
+    <script>
+
+        const studentName=document.getElementById("name");
+        const studentEmail=document.getElementById("email");
+        const studentMob=document.getElementById("mobno");
+        const studentAddr=document.getElementById("addr");
+
+        studentName.innerText="Name : "+localStorage.getItem("Name");
+        studentEmail.innerText="Email : "+localStorage.getItem("Email");
+        studentMob.innerText="Mobile No : "+localStorage.getItem("MobileNo");
+        studentAddr.innerText="Address : "+localStorage.getItem("Address");
+    </script>
+
+</body>
+</html>
